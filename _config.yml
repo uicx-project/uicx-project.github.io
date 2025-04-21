@@ -1,0 +1,20 @@
+author: Senorihl
+title: UICX Project
+description: Everything you must know about the UICX project
+
+exclude: [ README.md, .vscode, .idea ]
+
+plugins:
+  - jekyll-feed
+  - jekyll-github-metadata
+  - jekyll-seo-tag
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-gist
+  - jekyll-sitemap
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
