@@ -2,6 +2,8 @@ author: Senorihl
 title: UICX Project
 description: Everything you must know about the UICX project
 
+google_analytics: G-TKTZL2M226
+
 exclude: [ README.md, .vscode, .idea ]
 
 plugins:
