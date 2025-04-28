@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        :root {
+            --bulma-primary-h: 208deg;
+            --bulma-primary-s: 79%;
+            --bulma-primary-l: 76%;
+            --bulma-link-h: 208deg;
+            --bulma-link-s: 79%;
+            --bulma-link-l: 76%;
+        }
+    </style>
+    {% include head-custom.html %}
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ "/" | relative_url }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120" xmlns:bx="https://boxy-svg.com">
+                    <g transform="matrix(1, 0, 0, 1, -10.043839, 0.000517)" style="">
+                        <path d="M 183.403 110.616 C 155.448 110.616 132.786 87.954 132.786 59.999 C 132.786 32.044 155.448 9.383 183.403 9.383 C 194.594 9.383 204.937 13.014 213.317 19.164 L 172.483 59.999 L 213.317 100.834 C 204.937 106.984 194.595 110.616 183.403 110.616 Z" style="paint-order: fill; filter: none; fill: url(#color-2);"></path>
+                        <path d="M 256.966 137.094 H 280.966 V 165.094 H 308.966 V 189.094 H 280.966 V 217.094 H 256.966 V 189.094 H 228.966 V 165.094 H 256.966 Z" bx:shape="cross 228.966 137.094 80 80 24 24 0.5 1@1edf6c9a" style="filter: none; fill: url(#color-0); transform-origin: 268.966px 177.094px 0px;" transform="matrix(0.707107, 0.707107, -0.707107, 0.707107, -26.996692, -117.09412)"></path>
+                    </g>
+                    <defs>
+                        <linearGradient id="color-0" bx:pinned="true" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.010197, 0, 0, 0.841375, -31.147976, 428.922027)">
+                            <title>silent</title>
+                            <stop style="stop-color: rgb(145, 196, 242);"></stop>
+                        </linearGradient>
+                        <linearGradient id="color-1" bx:pinned="true" gradientUnits="userSpaceOnUse">
+                            <title>accent</title>
+                            <stop style="stop-color: rgb(1, 41, 95);"></stop>
+                        </linearGradient>
+                        <linearGradient id="color-2" bx:pinned="true" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1, 0, 0, 1, 9.223271, 1.055907)">
+                            <title>yellow</title>
+                            <stop style="stop-color: rgb(255, 179, 15);"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g transform="matrix(1, 0, 0, 1, 16.87216, 0.129002)">
+                        <rect style="fill: url(#color-1); stroke-linecap: round;" x="80.277" y="19.742" width="12" height="80" rx="2" ry="2"></rect>
+                        <path d="M 15.693 20 L 15.74 20 L 27.693 37.591 L 27.693 88.261 L 56.693 88.261 L 56.693 37.73 L 68.693 20.069 L 68.693 98 C 68.693 99.105 67.798 100 66.693 100 L 17.693 100 C 16.588 100 15.693 99.105 15.693 98 L 15.693 20 Z" style="fill: url(#color-1);"></path>
+                    </g>
+                </svg>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{ "/" | relative_url }}">
+                    Home
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Documentation
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        {% for thematic in site.thematics %}
+                            <a class="navbar-item" href="{{ "/" | append: thematic.slug | relative_url }}">{{ thematic.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container content">
+    {% if site.title and site.title != page.title %}
+        <h1 class="is-sr-only">{{ site.title }}</h1>
+    {% endif %}
+    {{ content }}
+</main>
+<footer class="bd-footer footer has-text-centered">
+    <div class="container">
+        <div class="bd-footer-tsp has-text-centered">
+            <a class="github-button" href="{{ site.github.owner.html_url }}" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @uicx-project on GitHub">Follow @{{ site.github.owner.name }}</a>
+        </div>
+        <div class="bd-footer-tsp has-text-centered">
+            Source code & project <a href="https://opensource.org/license/unlicense" target="_blank">unlicensed</a>.
+        </div>
+        <div class="bd-footer-tsp has-text-centered">
+            This site is open source. <a href="{% github_edit_link %}" target="_blank">Improve this page</a>.
+        </div>
+    </div>
+</footer>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+<script>anchors.add();</script>
+</body>
+</html>

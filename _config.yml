@@ -6,6 +6,11 @@ google_analytics: G-TKTZL2M226
 
 exclude: [ README.md, .vscode, .idea ]
 
+collections:
+  thematics:
+    output: true
+    permalink: /:name
+
 plugins:
   - jekyll-feed
   - jekyll-github-metadata
@@ -14,7 +19,6 @@ plugins:
   - jekyll-commonmark-ghpages
   - jekyll-gist
   - jekyll-sitemap
-  - jekyll-github-metadata
   - jekyll-paginate
   - jekyll-relative-links
   - jekyll-optional-front-matter

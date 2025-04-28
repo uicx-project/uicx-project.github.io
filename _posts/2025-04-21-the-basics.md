@@ -2,6 +2,8 @@
 layout: post
 title: The basics
 permalink: /basic-concept
+category: getting started
+description: Learn about the configuration file and a sample view file.
 ---
 
 ## The basics

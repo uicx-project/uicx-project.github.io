@@ -15,3 +15,11 @@ It may seems simple at first but when you want to build robust application you n
 {% for post in basics %}
  {{ post.content | remove: '<h2 id="the-basics">The basics</h2>' }}
 {% endfor %}
+
+
+## Further reading
+
+{% for thematic in site.thematics %}
+- [{{ thematic.title }}]({{ "/" | append: thematic.slug | relative_url }}){% if thematic.description %}: {{ thematic.description }}{% endif %}
+{% endfor %}
+
